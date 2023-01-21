@@ -1,0 +1,40 @@
+@import "../../sass/variables.scss";
+.welcome-section {
+  --spacer: 3.125rem;
+  --flow-spacer: 0.625rem;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "image";
+    gap: var(--spacer);
+
+    @media only screen and (min-width: $breakpoint-xl) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "image text";
+    }
+  }
+
+  &__text {
+    grid-area: text;
+    @media only screen and (min-width: $breakpoint-xl) {
+      display: flex;
+      flex-direction: column;
+      > *:last-child {
+        margin-top: auto;
+      }
+    }
+  }
+
+  &__image-container {
+    grid-area: image;
+  }
+
+  &__title {
+    span {
+      display: block;
+    }
+  }
+}

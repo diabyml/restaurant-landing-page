@@ -1,0 +1,14 @@
+.btn {
+  border: none;
+  appearance: none;
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-semibold);
+  font-size: 1rem;
+
+  padding: 1rem 1.375rem;
+
+  &--primary {
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+  }
+}

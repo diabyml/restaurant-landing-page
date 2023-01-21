@@ -1,0 +1,68 @@
+colors
+=======
+	#000;
+	#8D8D8D;
+	#636465;
+	#B7B7B7;
+	#212529;
+	#979797
+	
+	#2C3722;
+	#8CB560;
+
+	#F8FBF5
+
+	#8CB560
+
+	#FEBD00;
+
+	#FCFFF8
+
+	#8E8E8E
+	#9E9E9E
+	#545454
+	#585858
+
+sizes
+=====
+	14 16 18 20 22 28 40 48 72
+
+Font-families
+============
+	Josefin Sans ---> Regular Roman, Semibold Roman, Bold Roman,
+	Poppins     ----> Regular, Medium, Semibold 
+	Cookie      ----> Regular
+
+
+
+
+wrapper width : 1117px 
+
+
+
+Font scaling system 
+
+scale ----------------> 1.5 
+
+Element                  phone            desktop  
+=================================================
+Hero title                                72
+Hero text                                 20
+Nav link                                  20 
+Footer link                               24
+Footer text                               24
+Button text                               16
+Testimonial text                          14 
+paragraph                                 18
+	Input text                                18
+	Section text                              18
+Section title                             28 
+Section subtitle                          40
+Card title                                23 
+	Card title v1                             24
+	Card title v2                             22
+
+paragraph is 18 by default
+
+
+Scalable text:    

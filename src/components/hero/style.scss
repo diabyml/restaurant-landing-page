@@ -1,0 +1,46 @@
+@import "../../sass/variables.scss";
+.hero-section {
+  --spacer: 2.5rem;
+  padding-top: 2.5rem;
+  @media only screen and (min-width: $breakpoint-xl) {
+    padding: 3.75rem 0;
+    --flow-spacer: 1.5rem;
+  }
+
+  &__heading {
+    color: var(--clr-black-200);
+    span {
+      display: block;
+    }
+  }
+
+  &__search-box {
+    --spacer: 1rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    // outline: 1px solid red;
+
+    @media only screen and (max-width: $breakpoint-lg) {
+      flex-direction: column;
+      align-items: center;
+
+      --spacer: 1.5rem;
+
+      > *:last-child {
+        margin-top: var(--spacer);
+      }
+    }
+
+    @media only screen and (min-width: $breakpoint-lg) {
+      > *:last-child {
+        margin-left: var(--spacer);
+      }
+    }
+
+    > *:first-child {
+      flex: 1;
+    }
+  }
+}

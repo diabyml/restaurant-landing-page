@@ -1,0 +1,62 @@
+@import "../../sass/variables.scss";
+.services-section {
+  --flow-spacer: 0.625rem;
+  text-align: center;
+
+  &__cards {
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem 0 0 0;
+    --spacer: 1.25rem;
+
+    @media only screen and (min-width: $breakpoint-xl) {
+      margin: 3.75rem 0 0 0;
+    }
+  }
+
+  &__card-item {
+    > div {
+      height: 100%;
+      max-width: 270px;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 3.25rem 1.25rem;
+      border-radius: 10px;
+      position: relative;
+
+      svg {
+        width: 70px;
+        height: 70px;
+      }
+
+      .text {
+        --spacer: 1.5625;
+        margin-top: 1.4375rem;
+      }
+
+      h3 {
+        color: var(--clr-black-300);
+      }
+
+      p {
+        color: var(--clr-gray-800);
+        line-height: 1.7;
+      }
+    }
+  }
+
+  .cart--shadowed {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    &::after {
+      content: "";
+      display: block;
+      height: 5px;
+      background-color: var(--clr-primary);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}

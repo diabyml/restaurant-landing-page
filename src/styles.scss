@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Josefin+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+@import "./sass/variables.scss";
+:root {
+  --ff-josefine-sans: "Josefin Sans", sans-serif;
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-cookie: "Cookie", cursive;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --ff-primary: var(--ff-poppins);
+  --ff-heading: var(--ff-josefine-sans);
+
+  --clr-black: #000;
+  --clr-black-200: #2c3722;
+  --clr-black-300: #212529;
+
+  --clr-white: #fff;
+  --clr-white-200: #f8fbf5;
+  --clr-white-300: #fcfff8;
+
+  --clr-gray-100: #707070;
+  --clr-gray-200: #8d8d8d;
+  --clr-gray-300: #8e8e8e;
+  --clr-gray-400: #9e9e9e;
+  --clr-gray-500: #979797;
+  --clr-gray-600: #b7b7b7;
+  --clr-gray-700: #636465;
+  --clr-gray-800: #545454;
+  --clr-gray-900: #585858;
+
+  --clr-primary: #8cb560;
+  --clr-secondary: #febd00;
+
+  --text-scale-ratio: 1;
+
+  // spacing
+  --flow-spacer: 1rem;
+  --spacer: 1rem;
+
+  --zindex-low: -1;
+  --zindex-lower: -2;
+  --z-index-lowest: -999;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* ******************************************************** */
+/* RESET */
+/* ******************************************************** */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ******************************************************** */
+/* GENERAL STYLING */
+/* ******************************************************** */
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.responsive-img {
+  @media only screen and (max-width: $breakpoint-tab) {
+    max-width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    max-width: 100%;
+  }
+}
+
+input,
+button {
+  font: inherit;
+}
+
+[class*="bg-"] {
+  background-color: var(--bg, var(--clr-white));
+  color: var(--fg, var(--clr-black-200));
+}
+
+.bg-primary {
+  --bg: var(--clr-white-200);
+  --fg: var(var(--clr-black-200));
+}
+
+.main {
+  position: relative;
+}
+
+.hidden-below {
+  z-index: var(--zindex-lower);
+}
+
+/* ******************************************************** */
+/* TYPOGRAPHY STYLING */
+/* ******************************************************** */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-heading);
+  line-height: 1.1;
+}
+
+h1,
+h2 {
+  font-weight: var(--fw-bold);
+}
+
+h3 {
+  font-weight: var(--fw-semibold);
+}
+
+.section-subtitle {
+  color: var(--clr-secondary);
+  font-size: 1.75rem;
+  font-family: var(--ff-cookie);
+  font-weight: var(--fw-regular);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--clr-black-300);
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    font-size: 1.66rem;
+  }
+}
+
+.heading-lg {
+  font-size: calc(2em * var(--text-scale-ratio));
+}
+
+p {
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-regular);
+  font-size: 1.125rem;
+}
+
+// 14px
+.text-sm {
+  font-size: 0.874rem;
+}
+
+// 18px
+.text-md {
+  font-size: 1.125rem;
+}
+
+// 20px
+.text-lg {
+  font-size: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.75rem;
+}
+
+@media only screen and (min-width: $breakpoint-xl) {
+  :root {
+    --text-scale-ratio: 1.3;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-desktop) {
+  :root {
+    --text-scale-ratio: 2;
+  }
+}
+
+/* ******************************************************** */
+/* GENERAL LAYOUT */
+/* ******************************************************** */
+section {
+  padding: 4.4375rem 0;
+  @media only screen and (min-width: $breakpoint-xl) {
+    padding: 8.875rem 0;
+  }
+}
+.wrapper {
+  max-width: var(--wrapper-width, 1117px);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.split {
+  display: flex;
+  flex-direction: column;
+
+  // equql width children
+  > * {
+    flex-basis: 100%;
+  }
+
+  // phone
+  @media only screen and (max-width: $breakpoint-tab) {
+    > * + * {
+      margin-top: var(--spacer);
+    }
+  }
+
+  // lg tab and desktop
+  @media only screen and (min-width: $breakpoint-xl) {
+    flex-direction: row;
+    // align-items: center;
+    > * + * {
+      margin-left: var(--spacer);
+    }
+  }
+}
+
+// flex
+.flex {
+  display: flex;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.fd-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.fd-column {
+  flex-direction: column;
+}
+
+/* ******************************************************** */
+/* SPACING */
+/* ******************************************************** */
+
+.flow-content {
+  > * + * {
+    margin-top: var(--flow-spacer);
+  }
+}
+
+// utility classes
+
+.text-center {
+  text-align: center;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mt-md {
+  margin-top: 1rem !important;
+}
